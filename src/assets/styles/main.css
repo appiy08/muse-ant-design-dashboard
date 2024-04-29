@@ -9,6 +9,14 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   padding: 0 0 30px 0;
   background-color: #fafafa;
@@ -83,12 +91,12 @@ body {
   overflow: visible;
 }
 
-.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item,
+/* .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item,
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu {
   padding: 0 !important;
   height: auto;
   line-height: normal;
-}
+} */
 
 .layout-dashboard
   .ant-layout-sider.sider-primary
@@ -366,10 +374,10 @@ body {
   padding-top: 100px;
   padding-bottom: 33px;
 }
-.ant-menu-inline.ant-menu-root .ant-menu-item,
+/* .ant-menu-inline.ant-menu-root .ant-menu-item,
 .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
   display: block;
-}
+} */
 
 .ant-layout.ant-layout-has-sider > .ant-layout,
 .ant-layout.ant-layout-has-sider > .ant-layout-content {
@@ -1118,7 +1126,6 @@ span.blue {
 }
 .table-responsive {
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 .py-1 {
   padding-top: 0.25rem !important;

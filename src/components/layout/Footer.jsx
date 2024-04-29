@@ -10,10 +10,10 @@
   * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { Layout, Row, Col } from "antd";
 import { HeartFilled } from "@ant-design/icons";
+import { Col, Layout, Row } from "antd";
 
-function Footer() {
+const Footer = () => {
   const { Footer: AntFooter } = Layout;
 
   return (
@@ -74,6 +74,6 @@ function Footer() {
       </Row>
     </AntFooter>
   );
-}
+};
 
 export default Footer;
