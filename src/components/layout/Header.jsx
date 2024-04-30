@@ -10,8 +10,8 @@
   * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 
 import {
   Avatar,
@@ -25,7 +25,7 @@ import {
   List,
   Row,
   Switch,
-  Typography,
+  Typography
 } from "antd";
 
 import {
@@ -35,9 +35,9 @@ import {
   TwitterOutlined,
 } from "@ant-design/icons";
 
+import { get, replace } from "lodash";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import avtar from "../../assets/images/team-2.jpg";
 import {
   BellIcon,
   ClockIcon,
@@ -48,7 +48,7 @@ import {
   ToggleIcon,
   WiFiIcon,
 } from "../../assets/icons";
-import { replace } from "lodash";
+import avatar from "../../assets/images/team-2.jpg";
 
 const ButtonContainer = styled.div`
   .ant-btn-primary {
@@ -71,44 +71,6 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const data = [
-  {
-    title: "New message from Sophie",
-    description: <>{ClockIcon} 2 days ago</>,
-
-    avatar: avtar,
-  },
-  {
-    title: "New album by Travis Scott",
-    description: <>{ClockIcon} 2 days ago</>,
-
-    avatar: <Avatar shape="square">{WiFiIcon}</Avatar>,
-  },
-  {
-    title: "Payment completed",
-    description: <>{ClockIcon} 2 days ago</>,
-    avatar: <Avatar shape="square">{CreditIcon}</Avatar>,
-  },
-];
-
-const menu = (
-  <List
-    min-width="100%"
-    className="header-notifications-dropdown "
-    itemLayout="horizontal"
-    dataSource={data}
-    renderItem={(item) => (
-      <List.Item>
-        <List.Item.Meta
-          avatar={<Avatar shape="square" src={item.avatar} />}
-          title={item.title}
-          description={item.description}
-        />
-      </List.Item>
-    )}
-  />
-);
-
 const Header = ({
   placement,
   name,
@@ -122,6 +84,30 @@ const Header = ({
 
   const [visible, setVisible] = useState(false);
   const [sidenavType, setSidenavType] = useState("transparent");
+
+  const [notifications] = useState([
+    {
+      key: "1",
+      label: "New message from Sophie",
+      title: "New message from Sophie",
+      description: `${ClockIcon} 2 days ago`,
+      icon: <Avatar src={avatar} shape="square" />,
+    },
+    {
+      key: "2",
+      label: "New album by Travis Scott",
+      title: "New album by Travis Scott",
+      description: `${ClockIcon} 2 days ago`,
+      icon: <Avatar icon={WiFiIcon} shape="square" />,
+    },
+    {
+      key: "3",
+      label: "Payment completed",
+      title: "Payment completed",
+      description: `${ClockIcon} 2 days ago`,
+      icon: <Avatar icon={CreditIcon} shape="square" />,
+    },
+  ]);
 
   useEffect(() => window.scrollTo(0, 0));
 
@@ -149,7 +135,22 @@ const Header = ({
         </Col>
         <Col span={24} md={18} className="header-control">
           <Badge size="small" count={4}>
-            <Dropdown menu={menu} trigger={["click"]}>
+            <Dropdown
+              trigger={["click"]}
+              menu={{ notifications }}
+              dropdownRender={(menu) => {
+                console.log("menu ::>>", menu);
+                return (
+                  <List.Item>
+                    <List.Item.Meta
+                      avatar={get(menu, "icon")}
+                      title={get(menu, "title")}
+                      description={get(menu, "description")}
+                    />
+                  </List.Item>
+                );
+              }}
+            >
               <a
                 href="#pablo"
                 className="ant-dropdown-link"

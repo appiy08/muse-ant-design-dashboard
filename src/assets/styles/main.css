@@ -91,13 +91,6 @@ body {
   overflow: visible;
 }
 
-/* .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item,
-.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu {
-  padding: 0 !important;
-  height: auto;
-  line-height: normal;
-} */
-
 .layout-dashboard
   .ant-layout-sider.sider-primary
   .ant-menu-inline
@@ -148,56 +141,43 @@ body {
 
 .layout-dashboard
   .ant-layout-sider.sider-primary
-  .ant-menu-item.ant-menu-item-selected
-  .active,
-.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item .active,
+  .ant-menu-item.ant-menu-item-selected,
 .layout-dashboard
   .ant-layout-sider.sider-primary
-  .ant-menu-submenu.ant-menu-item-selected
-  .active,
-.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu .active {
+  .ant-menu-submenu.ant-menu-item-selected,
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu {
   background-color: #fff;
   box-shadow: 0 20px 27px rgb(0 0 0 / 5%);
   font-weight: 600;
 }
-.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item a,
-.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu a {
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item,
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu{
   padding: 10px 16px;
   color: #141414;
   border-radius: 8px;
   display: flex;
   align-items: center;
   white-space: nowrap;
+  height: auto;
+  line-height: normal;
 }
 
 .layout-dashboard
   .ant-layout-sider.sider-primary.ant-layout-sider-primary
   .ant-menu-item.ant-menu-item-selected
-  .active
-  .icon,
-.layout-dashboard
-  .ant-layout-sider.sider-primary.ant-layout-sider-primary
-  .ant-menu-item
-  .active
   .icon {
   background-color: #1890ff;
 }
 .layout-dashboard
   .ant-layout-sider.sider-primary
   .ant-menu-item.ant-menu-item-selected
-  .active
   .icon,
-.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item .active .icon,
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-ite .icon,
 .layout-dashboard
   .ant-layout-sider.sider-primary
   .ant-menu-submenu.ant-menu-item-selected
-  .active
   .icon,
-.layout-dashboard
-  .ant-layout-sider.sider-primary
-  .ant-menu-submenu
-  .active
-  .icon {
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu .icon {
   background-color: #1890ff;
 }
 
@@ -218,27 +198,15 @@ body {
 .layout-dashboard
   .ant-layout-sider.sider-primary
   .ant-menu-item.ant-menu-item-selected
-  .active
   svg
   path,
-.layout-dashboard
-  .ant-layout-sider.sider-primary
-  .ant-menu-item
-  .active
-  svg
-  path,
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item svg path,
 .layout-dashboard
   .ant-layout-sider.sider-primary
   .ant-menu-submenu.ant-menu-item-selected
-  .active
   svg
   path,
-.layout-dashboard
-  .ant-layout-sider.sider-primary
-  .ant-menu-submenu
-  .active
-  svg
-  path {
+.layout-dashboard .ant-layout-sider.sider-primary .ant-menu-submenu svg path {
   fill: #fff;
 }
 .layout-dashboard .ant-layout-sider.sider-primary .ant-menu-item svg path,
