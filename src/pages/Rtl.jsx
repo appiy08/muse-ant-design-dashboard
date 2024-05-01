@@ -469,14 +469,8 @@ function Home() {
                   pending="Recording..."
                   className="timelinelist"
                   reverse={reverse}
-                >
-                  {timelineList.map((t, index) => (
-                    <Timeline.Item color={t.color} key={index}>
-                      <Title level={5}>{t.title}</Title>
-                      <Text>{t.time}</Text>
-                    </Timeline.Item>
-                  ))}
-                </Timeline>
+                  items={timelineList}
+                />
                 <Button
                   type="primary"
                   className="width-100"

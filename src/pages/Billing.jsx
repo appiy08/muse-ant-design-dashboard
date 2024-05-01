@@ -425,9 +425,9 @@ function Billing() {
           <Card
             bordered={false}
             className="header-solid h-full ant-invoice-card"
-            title={[<h6 className="font-semibold m-0">Invoices</h6>]}
+            title={[<h6 key="card-title" className="font-semibold m-0">Invoices</h6>]}
             extra={[
-              <Button type="primary">
+              <Button key="extra-btn" type="primary">
                 <span>VIEW ALL</span>
               </Button>,
             ]}
@@ -436,9 +436,9 @@ function Billing() {
               itemLayout="horizontal"
               className="invoice-list"
               dataSource={data}
-              renderItem={(item) => (
-                <List.Item
-                  actions={[<Button type="link">{download} PDF</Button>]}
+              renderItem={(item,index) => (
+                <List.Item key={index}
+                  actions={[<Button key={index} type="link">{download} PDF</Button>]}
                 >
                   <List.Item.Meta
                     title={item.title}
@@ -456,8 +456,8 @@ function Billing() {
           <Card
             className="header-solid h-full"
             bordered={false}
-            title={[<h6 className="font-semibold m-0">Billing Information</h6>]}
-            bodyStyle={{ paddingTop: "0" }}
+            title={[<h6 key="card-title" className="font-semibold m-0">Billing Information</h6>]}
+            styles={{ body: { paddingTop: "0" } }}
           >
             <Row gutter={[24, 24]}>
               {information.map((i, index) => (
@@ -494,7 +494,7 @@ function Billing() {
         <Col span={24} md={8} className="mb-24">
           <Card
             bordered={false}
-            bodyStyle={{ paddingTop: 0 }}
+            styles={{ body: { paddingTop: 0 } }}
             className="header-solid h-full  ant-list-yes"
             title={<h6 className="font-semibold m-0">Your Transactions</h6>}
             extra={
@@ -509,8 +509,8 @@ function Billing() {
               className="transactions-list ant-newest"
               itemLayout="horizontal"
               dataSource={newest}
-              renderItem={(item) => (
-                <List.Item>
+              renderItem={(item,index) => (
+                <List.Item key={index}>
                   <List.Item.Meta
                     avatar={
                       <Avatar size="small" className={item.textclass}>
@@ -532,8 +532,8 @@ function Billing() {
               header={<h6>YESTERDAY</h6>}
               itemLayout="horizontal"
               dataSource={yesterday}
-              renderItem={(item) => (
-                <List.Item>
+              renderItem={(item,index) => (
+                <List.Item key={index}>
                   <List.Item.Meta
                     avatar={
                       <Avatar size="small" className={item.textclass}>
